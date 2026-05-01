@@ -7,6 +7,8 @@ import compression from "compression";
 import cookieParser from "cookie-parser";
 import { rateLimit } from 'express-rate-limit';
 
+import { env } from "./config/env.js";
+
 const app = express();
 app.use(cookieParser());
 
