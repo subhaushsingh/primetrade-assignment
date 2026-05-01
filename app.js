@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import { rateLimit } from 'express-rate-limit';
 
 import { env } from "./config/env.js";
+import { errorHandler } from './middlewares/errorHandler.middleware.js';
 
 const app = express();
 app.use(cookieParser());
@@ -50,5 +51,7 @@ app.get("/health", (req, res) => {
 app.use((req, res) => {
     res.status(404).json({ success: false, message: `Route ${req.method} ${req.path} not found` })
 })
+
+app.use(errorHandler);
 
 export default app;
