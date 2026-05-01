@@ -32,7 +32,7 @@ export const login = async (req, res, next) => {
       httpOnly: true,
       secure: isProd,
       sameSite: 'strict',
-      maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
+      maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
     res.status(200).json({
