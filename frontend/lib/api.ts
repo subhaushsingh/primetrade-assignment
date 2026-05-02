@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-const baseURL = process.env.NODE_ENV === 'production' 
-  ? '/_/backend/api/v1' 
-  : 'http://localhost:5000/api';
+const baseURL = 'https://primetrade-assignment-h3io.onrender.com/api/v1/'
 
 const api = axios.create({
   baseURL,
